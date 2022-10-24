@@ -1,9 +1,18 @@
+::-moz-selection {
+    color: #0d410a;
+    background: #deffc2;
+}
+::selection {
+    color:#0d410a;
+    background: #deffc2
+}
 body {
-    background-image: url("/calculadora-imc/assets/img/papel-de-parede.jpg");
+    background-image: url("/calculadora-imc/assets/img/background.png");
+    background-repeat: no-repeat;
     background-size: 100%;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    color: #004464;
+    color: #0d410a;
 }
 .header-container {
     display: flex;
@@ -15,7 +24,7 @@ body {
 .header-container h1 {
     font-size: 40px;
     font-weight: 800;
-    color: #2ECC71;
+    color: #74B324;
 }
 .hero-container h2 {
     font-size: 20px;
@@ -23,20 +32,23 @@ body {
     text-align: center;
 }
 .btn-genero {
-    background-color: #ddfada;
+    background-color: #deffc2;
     border: none;
     border-radius: 10px;
+    margin: 5px;
+    height: 130px;
+    width: 130px;
 }
 .btn-genero:hover {
-    border: 3px solid #2ECC71;
+    border: 3px solid #74B324;
 }
 .btn-calcular {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
-    color: #fffafa;
-    background-color: #2ECC71;
+    color: #deffc2;
+    background-color: #74B324;
     border: none;
     border-radius: 30px;
     padding: 5px 20px;
@@ -45,9 +57,9 @@ body {
     height: 40px;
 }
 .btn-calcular:hover {
-    color: #2ECC71;
-    background-color: #ddfada;
-    border: 3px solid #2ECC71;
+    color: #74B324;
+    background-color: #deffc2;
+    border: 3px solid #74B324;
 }
 .hero-container {
     display: flex;
@@ -61,23 +73,31 @@ body {
     text-align: center;
 }
 .informacoes input {
-    color: #2ECC71;
-    border: 1px solid #2ECC71;
+    color: #74B324;
+    border: 1px solid #74B324;
     border-radius: 5px;
     width: 200px;
     height: 30px;
 }
 .informacoes input:hover {
-    border: 2px solid #2ECC71;
+    border: 2px solid #74B324;
 }
 .informacoes input:focus {
-    outline: #2ECC71
+    outline: #74B324
 }
 .footer-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-top: 40px;
+    justify-content: center;
+}
+.rodape {
+    display: flex;
+    flex-direction: column;
+}
+.rodape p {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
 }
 .redes-sociais {
     display: flex;
