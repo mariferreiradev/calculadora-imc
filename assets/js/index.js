@@ -1,0 +1,1 @@
+window.document.querySelector('button.btn-genero')
