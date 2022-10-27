@@ -1,12 +1,13 @@
 const botaoMasculinoEl = document.querySelector('.btn-masculino')
 const botaoFemininoEl = document.querySelector('.btn-feminino')
+const botaoCalcularEl = document.querySelector('.btn-calcular')
+const botaoAlertEl = document.querySelector('.btn-alert')
+const botaoResultEl = document.querySelector('.btn-result')
 const entradaIdadeEl = document.querySelector('.idade')
 const entradaPesoEl = document.querySelector('.peso')
 const entradaAlturaEl = document.querySelector('.altura')
-const botaoCalcularEl = document.querySelector('.btn-calcular')
 const divCalculadoraEl = document.querySelector('.calculadora')
 const divAlertEl = document.querySelector('.alert-idade')
-const botaoAlertEl = document.querySelector('.btn-alert')
 const divResultadoAdultoEl = document.querySelector('.resultado-adulto')
 
 function selecionarMasculino() {
@@ -38,6 +39,10 @@ function mostrarImc () {
     const resultadoImc = calcularImc (entradaPesoEl.value, entradaAlturaEl.value)
 }
 function voltarInicio() {
+    divResultadoAdultoEl.classList.add('hidden')
+    divCalculadoraEl.classList.remove('hidden')
+}
+function voltarInicioAlert() {
     divAlertEl.classList.add('hidden')
     divCalculadoraEl.classList.remove('hidden')
 }
@@ -45,4 +50,5 @@ function voltarInicio() {
 botaoMasculinoEl.addEventListener('click', selecionarMasculino)
 botaoFemininoEl.addEventListener('click', selecionarFeminino)
 botaoCalcularEl.addEventListener('click', mostrarImc)
-botaoAlertEl.addEventListener('click', voltarInicio)
+botaoAlertEl.addEventListener('click', voltarInicioAlert)
+botaoResultEl.addEventListener('click', voltarInicio)
