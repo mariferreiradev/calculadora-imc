@@ -7,6 +7,7 @@ const botaoCalcularEl = document.querySelector('.btn-calcular')
 const divCalculadoraEl = document.querySelector('.calculadora')
 const divAlertEl = document.querySelector('.alert-idade')
 const botaoAlertEl = document.querySelector('.btn-alert')
+const divResultadoAdultoEl = document.querySelector('.resultado-adulto')
 
 function selecionarMasculino() {
     botaoMasculinoEl.style.border = "3px solid #74B324";
@@ -21,9 +22,11 @@ function verficarIdade() {
         divCalculadoraEl.classList.add('hidden')
         divAlertEl.classList.remove('hidden')
     } else if (entradaIdadeEl.value > 65) {
-
+        divCalculadoraEl.classList.add('hidden')
+        divResultadoAdultoEl.classList.remove('hidden')
     } else {
-
+        divCalculadoraEl.classList.add('hidden')
+        divResultadoAdultoEl.classList.remove('hidden')
     }
 }
 function calcularImc (peso, altura) {

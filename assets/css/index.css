@@ -104,11 +104,8 @@ body {
     outline: #74B324
 }
 
- /* Pagina de alerta para idade < 19 */ 
+ /* Página de alerta para idade < 19 */ 
 
-.hidden {
-    display: none;
-}
 .alert-idade {
     margin-top: 20px;
     border: 4px solid #74B324;
@@ -129,6 +126,28 @@ body {
     text-align: center;
     font-size: 16px;
  }
+
+/* Página para idade adulta */
+
+.resultado-adulto {
+    display: flex;
+    gap: 100px;
+}
+.resultados {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.imc, .classificacao {
+    color: #0d410a;
+    border: 3px solid #74B324;
+    border-radius: 20px;
+    width: 300px;
+    height: 50px;
+}
+.hidden {
+    display: none;
+}
 
 /* Footer */
 
@@ -151,4 +170,3 @@ body {
     justify-content: center;
     gap: 1rem;
 }
-
