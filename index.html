@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/index.css">
-    <script src="./assets/js/index.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet">
@@ -21,21 +20,21 @@
         <div class="genero">
             <p>Selecione seu sexo:</p>
             <div class="generos">
-                <button class="btn-genero">
+                <button class="btn-masculino" onclick="selecionarMasculino()">
                     <img src="./assets/img/icone-masculino.png" height="115">
                 </button>
-                <button class="btn-genero">
-                    <img src="./assets/img/icone-feminino.png" height="115">
+                <button class="btn-feminino">
+                    <img src="./assets/img/icone-feminino.png" onclick="selecionarFeminino()" height="115">
                 </button>     
             </div>
         </div>
         <div class="informacoes">
             <p>Digite sua idade:</p>
-            <input type="number" placeholder="ex: 25">
+            <input type="number" placeholder="ex: 25" class="idade">
             <p>Digite seu peso atual:</p>
-            <input type="number" placeholder="ex: 50">
+            <input type="number" placeholder="ex: 50" class="peso">
             <p>Digite sua altura atual em metros:</p>
-            <input type="number" placeholder="ex: 1.60">
+            <input type="number" placeholder="ex: 1.60" class="altura">
         </div>
         <button class="btn-calcular">calcular</button>
     </main>
@@ -55,5 +54,6 @@
             </div>
         </div>
     </footer>
+    <script src="./assets/js/index.js"></script>
 </body>
 </html>
