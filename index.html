@@ -16,39 +16,49 @@
         <img src="./assets/img/abacate-titulo.png" width="80" height="80">
     </header>
     <main class="hero-container">
-        <h2>Descubra seu Indice de Massa Corporal</h2>
-        <div class="genero">
-            <p>Selecione seu sexo:</p>
+        <div class="calculadora" hidden>
+            <h2>Descubra seu Indice de Massa Corporal</h2>
+            <div class="genero">
+                <p>Selecione seu sexo:</p>
+            </div>
             <div class="generos">
                 <button class="btn-masculino" onclick="selecionarMasculino()">
                     <img src="./assets/img/icone-masculino.png" height="115">
                 </button>
                 <button class="btn-feminino">
                     <img src="./assets/img/icone-feminino.png" onclick="selecionarFeminino()" height="115">
-                </button>     
+                </button>
+            </div>     
+            <div class="informacoes">
+                <p>Digite sua idade:</p>
+                <input type="number" placeholder="ex: 25" class="idade">
+                <p>Digite seu peso atual:</p>
+                <input type="number" placeholder="ex: 50" class="peso">
+                <p>Digite sua altura atual em metros:</p>
+                <input type="number" placeholder="ex: 1.60" class="altura">
+            </div>
+            <button class="btn-calcular">calcular</button>
+        </div>
+        <div class="alert-idade" hidden>
+            <h2>Ops...</h2>
+            <div class="alert-msg">
+                <p>Esta calculadora mede o IMC de pessoas acima de 18 anos, crianças e adolescentes devem consultar um profissional de saúde especializado.</p>
+                <img src="./assets/img/abacate-alert.png" height="80" width="80">
+                <button class="btn-alert">OK</button>
             </div>
         </div>
-        <div class="informacoes">
-            <p>Digite sua idade:</p>
-            <input type="number" placeholder="ex: 25" class="idade">
-            <p>Digite seu peso atual:</p>
-            <input type="number" placeholder="ex: 50" class="peso">
-            <p>Digite sua altura atual em metros:</p>
-            <input type="number" placeholder="ex: 1.60" class="altura">
-        </div>
-        <button class="btn-calcular">calcular</button>
     </main>
     <footer class="footer-container">
         <div class="rodape">
             <p>Desenvolvido por Mariana Ferreira</p>
             <div class="redes-sociais">
-                <a href="https://github.com/mariferreiradev">
+                <a href="https://github.com/mariferreiradev" target="_blank">
                     <img src="./assets/img/github.png" width="40" height="40"/>
                 </a>
-                <a href="https://www.linkedin.com/in/mariferreiradev/">
+                <a href="https://www.linkedin.com/in/mariferreiradev/" target="_blank">
                     <img src="./assets/img/linkedin.png" width="40" height="40"/>
                 </a>
-                <a href="https://www.flaticon.com/br/stickers-gratis/smileys">
+                <a href="https://www.flaticon.com/br/stickers-gratis/smileys" target="_blank">
                     <img src="./assets/img/abacate-creditos.png" title="Smileys figurinhas criadas por Adorableninana - Flaticon" width="40" height="40">
                 </a>
             </div>
