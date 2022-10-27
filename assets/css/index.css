@@ -109,7 +109,7 @@ body {
     margin-top: 20px;
     border: 4px solid #74B324;
     border-radius: 40px;
-    padding: 40px;
+    padding: 30px;
 }
 .alert-idade h2 {
     font-size: 30px;
@@ -131,6 +131,8 @@ body {
 .resultado-adulto {
     display: flex;
     gap: 100px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 .resultados {
     display: flex;
@@ -139,6 +141,10 @@ body {
     align-items: center;
 }
 .imc, .classificacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
     color: #0d410a;
     border: 3px solid #74B324;
     border-radius: 20px;

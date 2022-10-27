@@ -9,6 +9,8 @@ const entradaAlturaEl = document.querySelector('.altura')
 const divCalculadoraEl = document.querySelector('.calculadora')
 const divAlertEl = document.querySelector('.alert-idade')
 const divResultadoAdultoEl = document.querySelector('.resultado-adulto')
+const divImcEl = document.querySelector('.imc')
+const divClassificacaoEl = document.querySelector('.classificacao')
 
 function selecionarMasculino() {
     botaoMasculinoEl.style.border = "3px solid #74B324";
@@ -33,22 +35,19 @@ function verficarIdade() {
 function calcularImc (peso, altura) {
     verficarIdade()
     let calculoImc = parseFloat(peso) / (parseFloat(altura)* parseFloat(altura))
-    return calculoImc.toFixed(2)
+    divImcEl.innerText = calculoImc.toFixed(2)
 }
 function mostrarImc () {
     const resultadoImc = calcularImc (entradaPesoEl.value, entradaAlturaEl.value)
 }
 function voltarInicio() {
-    divResultadoAdultoEl.classList.add('hidden')
-    divCalculadoraEl.classList.remove('hidden')
-}
-function voltarInicioAlert() {
     divAlertEl.classList.add('hidden')
+    divResultadoAdultoEl.classList.add('hidden')
     divCalculadoraEl.classList.remove('hidden')
 }
 
 botaoMasculinoEl.addEventListener('click', selecionarMasculino)
 botaoFemininoEl.addEventListener('click', selecionarFeminino)
 botaoCalcularEl.addEventListener('click', mostrarImc)
-botaoAlertEl.addEventListener('click', voltarInicioAlert)
+botaoAlertEl.addEventListener('click', voltarInicio)
 botaoResultEl.addEventListener('click', voltarInicio)
