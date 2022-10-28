@@ -11,14 +11,18 @@ const divAlertEl = document.querySelector('.alert-idade')
 const divResultadoAdultoEl = document.querySelector('.resultado-adulto')
 const divImcEl = document.querySelector('.imc')
 const divClassificacaoEl = document.querySelector('.classificacao')
+const imgResultadoEl = document.querySelector('#img-resultado')
 
+let sexo;
 function selecionarMasculino() {
     botaoMasculinoEl.style.border = "3px solid #74B324";
     botaoFemininoEl.style.border = "none";
+    sexo = 'masculino'
 }
 function selecionarFeminino() {
     botaoFemininoEl.style.border = "3px solid #74B324";
     botaoMasculinoEl.style.border = "none";
+    sexo = 'feminino'
 }
 function verficarIdade() {
     if (entradaIdadeEl.value < 19) {
@@ -32,14 +36,6 @@ function verficarIdade() {
         mostrarClassificacaoImc()
         divCalculadoraEl.classList.add('hidden')
         divResultadoAdultoEl.classList.remove('hidden')
-    }
-}
-function mostrarClassificacaoImc () {
-    if (entradaIdadeEl.value > 18 && entradaIdadeEl.value <= 65) {
-        classificacaoImcAdulto()
-    }
-    else if (entradaIdadeEl.value > 65) {
-        classificacaoImcIdoso()
     }
 }
 function classificacaoImcAdulto (imc) {
@@ -61,9 +57,17 @@ function classificacaoImcIdoso (imc) {
     if (imc <= 22) {
         divClassificacaoEl.innerText = 'Baixo peso'
     } else if (imc > 22 && imc < 27) {
-        divClassificacaoEl.innerText = 'Adequado ou eutrófico'
+        divClassificacaoEl.innerText = 'Peso adequado'
     } else if (imc >= 27) {
         divClassificacaoEl.innerText = 'Sobrepeso'
+    }
+}
+function mostrarClassificacaoImc () {
+    if (entradaIdadeEl.value > 18 && entradaIdadeEl.value <= 65) {
+        classificacaoImcAdulto()
+    }
+    else if (entradaIdadeEl.value > 65) {
+        classificacaoImcIdoso()
     }
 }
 function calcularImcAdulto (peso, altura) {
@@ -84,6 +88,32 @@ function mostrarImc () {
     else if (entradaIdadeEl.value > 65) {
         calcularImcIdoso (entradaPesoEl.value, entradaAlturaEl.value)
     }
+    generos()
+}
+function selecionarImagemFeminino() {
+    if (divClassificacaoEl.innerText === "Peso normal") {
+        imgResultadoEl.src = "/calculadora-imc/assets/img/icon-feminino-eutrofico.png"
+    } else if (divClassificacaoEl.innerText === 'Peso adequado') {
+        imgResultadoEl.src = "/calculadora-imc/assets/img/icon-feminino-eutrofico.png"
+    } else {
+        imgResultadoEl.src = "/calculadora-imc/assets/img/icon-feminino-resultado.png"
+    }
+}
+function selecionarImagemMasculino() {
+    if (divClassificacaoEl.innerText === "Peso normal") {
+        imgResultadoEl.src = "/calculadora-imc/assets/img/icon-masculino-eutrofico.png"
+    } else if (divClassificacaoEl.innerText === "Peso adequado") {
+        imgResultadoEl.src = "/calculadora-imc/assets/img/icon-masculino-eutrofico.png"
+    } else {
+        imgResultadoEl.src = "/calculadora-imc/assets/img/icon-masculino-resultado.png"
+    }
+}
+function generos() {
+    if (sexo === 'feminino') {
+        selecionarImagemFeminino()
+    } else if (sexo === 'masculino') {
+        selecionarImagemMasculino()
+    }
 }
 function voltarInicio() {
     divAlertEl.classList.add('hidden')
@@ -96,3 +126,4 @@ botaoFemininoEl.addEventListener('click', selecionarFeminino)
 botaoCalcularEl.addEventListener('click', mostrarImc)
 botaoAlertEl.addEventListener('click', voltarInicio)
 botaoResultEl.addEventListener('click', voltarInicio)
+
