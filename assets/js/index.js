@@ -25,20 +25,65 @@ function verficarIdade() {
         divCalculadoraEl.classList.add('hidden')
         divAlertEl.classList.remove('hidden')
     } else if (entradaIdadeEl.value > 65) {
+        mostrarClassificacaoImc()
         divCalculadoraEl.classList.add('hidden')
         divResultadoAdultoEl.classList.remove('hidden')
     } else {
+        mostrarClassificacaoImc()
         divCalculadoraEl.classList.add('hidden')
         divResultadoAdultoEl.classList.remove('hidden')
     }
 }
-function calcularImc (peso, altura) {
-    verficarIdade()
+function mostrarClassificacaoImc () {
+    if (entradaIdadeEl.value > 18 && entradaIdadeEl.value <= 65) {
+        classificacaoImcAdulto()
+    }
+    else if (entradaIdadeEl.value > 65) {
+        classificacaoImcIdoso()
+    }
+}
+function classificacaoImcAdulto (imc) {
+    if (imc < 18.5) {
+        divClassificacaoEl.innerText = 'Baixo peso'
+    } else if (imc >= 18.5 && imc <= 24.9) {
+        divClassificacaoEl.innerText = 'Peso normal'
+    } else if (imc >= 25.0 && imc <= 29.9) {
+        divClassificacaoEl.innerText = 'Excesso de peso'
+    } else if (imc >= 30.0 && imc <= 34.9) {
+        divClassificacaoEl.innerText = 'Obesidade de Classe 1'
+    } else if (imc >= 35.0 && imc <= 39.9) {
+        divClassificacaoEl.innerText = 'Obesidade de Classe 2'
+    } else if (imc >= 40) {
+        divClassificacaoEl.innerText = 'Obesidade de Classe 3'
+    }
+}
+function classificacaoImcIdoso (imc) {
+    if (imc <= 22) {
+        divClassificacaoEl.innerText = 'Baixo peso'
+    } else if (imc > 22 && imc < 27) {
+        divClassificacaoEl.innerText = 'Adequado ou eutrófico'
+    } else if (imc >= 27) {
+        divClassificacaoEl.innerText = 'Sobrepeso'
+    }
+}
+function calcularImcAdulto (peso, altura) {
     let calculoImc = parseFloat(peso) / (parseFloat(altura)* parseFloat(altura))
     divImcEl.innerText = calculoImc.toFixed(2)
+    classificacaoImcAdulto (calculoImc)
+}
+function calcularImcIdoso (peso, altura) {
+    let calculoImc = parseFloat(peso) / (parseFloat(altura)* parseFloat(altura))
+    divImcEl.innerText = calculoImc.toFixed(2)
+    classificacaoImcIdoso (calculoImc)
 }
 function mostrarImc () {
-    const resultadoImc = calcularImc (entradaPesoEl.value, entradaAlturaEl.value)
+    verficarIdade()
+    if (entradaIdadeEl.value > 18 && entradaIdadeEl.value <= 65) {
+        calcularImcAdulto (entradaPesoEl.value, entradaAlturaEl.value)
+    }
+    else if (entradaIdadeEl.value > 65) {
+        calcularImcIdoso (entradaPesoEl.value, entradaAlturaEl.value)
+    }
 }
 function voltarInicio() {
     divAlertEl.classList.add('hidden')
