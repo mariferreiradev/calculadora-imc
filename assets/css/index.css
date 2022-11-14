@@ -177,7 +177,7 @@ body {
 
 /* Responsividade*/
 
-@media (min-width:200px) and (max-width: 600px) {
+@media (min-width:200px) and (max-width: 1000px) {
     /*page index*/
     .header-container {
         padding: 40px 20px;
