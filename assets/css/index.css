@@ -250,7 +250,7 @@ body {
         width: 200px;
         height: 50px;
     }
-    #img-resultado {
+    .div-img-resultado img{
         width: 200px;
         height: 200px;
     }
