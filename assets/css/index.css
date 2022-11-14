@@ -125,7 +125,7 @@ body {
  .alert-msg p {
     text-align: center;
     font-size: 16px;
- }
+}
 
 /* Página para resultado IMC */
 
@@ -178,18 +178,18 @@ body {
     gap: 1rem;
 }
 
-/* Responsividade */
+/* Responsividade*/
 
-@media (max-width: 500px) {
+@media (min-width:200px) and (max-width: 600px) {
+    /*page index*/
     .header-container {
-        margin-top: 18px;
-        padding: 20px 20px;
+        padding: 40px 20px;
         gap: 5px;
     }
     .header-container h1 {
         margin: 0;
         text-align: center;
-        font-size: 35px;
+        font-size: 30px;
         font-weight: 800;
     }
     .header-container img {
@@ -211,70 +211,47 @@ body {
         height: 95px;
         width: 95px;
     }
-}
-  
-@media (max-width: 800px) {
-    .header-container {
-        margin-top: 30px;
-        padding: 20px 20px;
-        gap: 5px;
+    /*page alert*/
+    .alert-idade {
+        margin-top: 0;
+        padding: 30px;
     }
-    .header-container h1 {
-        margin: 0;
-        text-align: center;
-        font-size: 35px;
-        font-weight: 800;
+    .alert-idade h2 {
+        padding: 0;
+        margin-top: 0px;
     }
-    .header-container img {
+    .alert-msg {
+        width: 160px;
+        margin: 0 auto;
+    }
+    .alert-msg img {
+        padding: 10px;
         width: 50px;
         height: 50px;
     }
-    .hero-container h2 {
-        font-size: 18px;
-        margin: 0;
-        padding: 10px 20px;
-        max-width: 300px;
+     .alert-msg p {
+        text-align: center;
+        font-size: 10px;
     }
-    .btn-feminino, .btn-masculino {
-        border-radius: 10px;
-        margin: 5px;
-        height: 120px;
+    .btn-alert {
+        margin-top: 15px;
         width: 120px;
     }
-    .btn-feminino img, .btn-masculino img {
-        height: 100px;
-        width: 100px;
-    }
-}
-@media (max-width: 1200px) {
-    .header-container {
+    /*Page resultado*/
+    .resultado-adulto {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
         margin-top: 30px;
-        padding: 20px 20px;
-        gap: 5px;
+        margin-bottom: 30px;
     }
-    .header-container h1 {
-        margin: 0;
-        text-align: center;
-        font-size: 40px;
-        font-weight: 800;
-    }
-    .header-container img {
-        width: 80px;
-        height: 80px;
-    }
-    .hero-container h2 {
+    .imc, .classificacao {
         font-size: 20px;
-        margin: 0;
-        padding: 10px 20px;
+        width: 200px;
+        height: 50px;
     }
-    .btn-feminino, .btn-masculino {
-        border-radius: 10px;
-        margin: 5px;
-        height: 130px;
-        width: 130px;
-    }
-    .btn-feminino img, .btn-masculino img {
-        height: 115px;
-        width: 115px;
+    #img-resultado {
+        width: 200px;
+        height: 200px;
     }
 }
