@@ -30,7 +30,7 @@
 
 1. Clone o repositório
    ```sh
-   git clone https://github.com/mariferreiradev/calculadora-imc
+   git clone https://github.com/mariferreiradev/calculadora-imc.git
    ```
 2. Abra o index.html com um navegador
 
